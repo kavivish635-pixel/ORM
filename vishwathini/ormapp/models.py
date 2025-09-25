@@ -1,12 +1,13 @@
 from django.db import models
 from django.contrib import admin
 
-class Employee(models.Model):
-    eid = models.CharField(max_length=20, help_text="Employee ID")
-    name = models.CharField(max_length=100)
-    salary = models.IntegerField()
-    age = models.IntegerField()
-    email = models.EmailField()
+class Car(models.Model):
+    car_id = models.CharField(max_length=20, help_text="Car ID")
+    brand = models.CharField(max_length=100)
+    model = models.CharField(max_length=100)
+    price = models.IntegerField()
+    year = models.IntegerField()
+    owner_email = models.EmailField()
 
-class EmployeeAdmin(admin.ModelAdmin):
-    list_display = ('eid', 'name', 'salary', 'age', 'email')
+class CarAdmin(admin.ModelAdmin):
+    list_display = ('car_id', 'brand', 'model', 'price', 'year', 'owner_email')
